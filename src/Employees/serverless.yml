@@ -1,0 +1,33 @@
+service: pos-tech-employees-ms
+
+provider:
+  name: aws
+  stage: ${opt:stage, "dev"}
+  region: sa-east-1
+  runtime: dotnet6
+  profile: DevSandbox
+  role: arn:aws:iam::985539770222:role/PosTechRole
+  environment:
+    EMPLOYEES_TABLE: PosTech-Employees
+
+package:
+  individually: true
+
+functions:
+  AuthenticatorFunction:
+    handler: Employees::Employees.Function::FunctionHandler
+    package:
+      artifact: ./function.zip
+    events:
+      - http:
+          path: /employees/authenticate
+          method: post
+
+  CreateFunction:
+    handler: Employees::Employees.Function::FunctionHandler
+    package:
+      artifact: ./function.zip
+    events:
+      - http:
+          path: /employees/create
+          method: post
