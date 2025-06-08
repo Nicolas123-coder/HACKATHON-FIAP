@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae795a82-ed9d-4687-9bb9-db2326a010b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HACKATON-FIAP.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utils/Response.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/event.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/omnisharp.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samconfig.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Employees/Employees.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Employees/Entities/Employee.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Employees/Function.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Employees/Handlers/Create.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Employees/Utils/DynamoDB.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Employees/aws-lambda-tools-defaults.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Employees/serverless.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +89,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748962644587</updated>
-      <workItem from="1748962645758" duration="15969000" />
+      <workItem from="1748962645758" duration="16299000" />
     </task>
     <servers />
   </component>
@@ -112,6 +98,17 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
