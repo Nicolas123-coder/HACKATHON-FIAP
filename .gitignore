@@ -22,6 +22,7 @@
 # =================================================================
 # pasta de publish do dotnet
 src/Employees/publish/
+src/Employees/function/
 
 # ZIP que criamos para o Lambda
 src/Employees/function.zip
