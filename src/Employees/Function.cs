@@ -29,6 +29,7 @@ namespace Employees
             services.AddSingleton<DynamoDbHelper>();
             services.AddSingleton<PasswordHasherService>();
             services.AddTransient<Create>();
+            services.AddTransient<Login>();
         }
         
         public async Task<APIGatewayProxyResponse> FunctionHandler(
@@ -42,9 +43,17 @@ namespace Employees
 
             switch (path)
             {
+                case "/employees/login"
+                    when method.Equals("POST", StringComparison.OrdinalIgnoreCase):
+                    context.Logger.LogLine("Enviando para LoginHandler");
+                    
+                    var loginHandler = _serviceProvider.GetRequiredService<Login>();
+                    return await loginHandler.HandleAsync(apigProxyEvent, context);
+                
                 case "/employees/create"
                     when method.Equals("POST", StringComparison.OrdinalIgnoreCase):
                     context.Logger.LogLine("Enviando para CreateEmployeeHandler");
+                    
                     var createHandler = _serviceProvider.GetRequiredService<Create>();
                     return await createHandler.HandleAsync(apigProxyEvent, context);
                

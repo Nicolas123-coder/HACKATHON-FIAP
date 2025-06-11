@@ -5,8 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae795a82-ed9d-4687-9bb9-db2326a010b0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Utils/Components/EmployeeRoles.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Employees/DTOs/LoginRequestDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Employees/DTOs/LoginResponseDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Employees/Enums/EmployeeRoles.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Employees/Handlers/Login.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuItems/DTOs/CreateMenuItemRequestDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuItems/DTOs/UpdateMenuItemRequestDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuItems/Entities/MenuItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuItems/Enums/EmployeeRoles.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuItems/Function.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuItems/Handlers/Authorizer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuItems/Handlers/Create.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuItems/Handlers/Update.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuItems/serverless.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.$SolutionArchitecture.drawio.bkp" beforeDir="false" afterPath="$PROJECT_DIR$/.$SolutionArchitecture.drawio.bkp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HACKATON-FIAP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HACKATON-FIAP/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HACKATON-FIAP.sln" beforeDir="false" afterPath="$PROJECT_DIR$/HACKATON-FIAP.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolutionArchitecture.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/SolutionArchitecture.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/DTOs/CreateEmployeeResponseDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/DTOs/CreateEmployeeResponseDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Employees.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Employees.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Entities/Employee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Entities/Employee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Function.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Function.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Handlers/Create.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Handlers/Create.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/serverless.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +124,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748962644587</updated>
-      <workItem from="1748962645758" duration="17076000" />
+      <workItem from="1748962645758" duration="26315000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,4 @@
-service: pos-tech-employees-ms
+service: pos-tech-menu-items-ms
 
 provider:
   name: aws
@@ -8,27 +8,27 @@ provider:
   profile: DevSandbox
   role: arn:aws:iam::985539770222:role/PosTechRole
   environment:
-    EMPLOYEES_TABLE: PosTech-Employees
+    MENU_ITEMS_TABLE: PosTech-MenuItems
     JWT_SECRET: ${ssm:/aws/reference/secretsmanager/JwtSecret}
 
 package:
   individually: true
 
 functions:
-  LoginFunction:
-    handler: Employees::Employees.Function::FunctionHandler
+  CreateMenuFunction:
+    handler: MenuItems::MenuItems.Function::FunctionHandler
     package:
       artifact: ./function.zip
     events:
       - http:
-          path: /employees/login
+          path: /menu/create
           method: post
 
-  CreateFunction:
-    handler: Employees::Employees.Function::FunctionHandler
+  UpdateMenuFunction:
+    handler: MenuItems::MenuItems.Function::FunctionHandler
     package:
       artifact: ./function.zip
     events:
       - http:
-          path: /employees/create
-          method: post
+          path: /menu/update
+          method: put

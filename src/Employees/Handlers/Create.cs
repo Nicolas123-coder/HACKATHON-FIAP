@@ -84,6 +84,7 @@ namespace Employees.Handlers
                 Id        = payload.Id,
                 Name      = payload.Name,
                 Email     = payload.Email,
+                Role      =  payload.Role,
                 CreatedAt = payload.CreatedAt,
                 UpdatedAt = payload.UpdatedAt
             };
