@@ -29,6 +29,15 @@ jobs:
           aws-access-key-id:     ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region:            sa-east-1
+          
+      - name: Create AWS profile file
+        run: |
+          mkdir -p ~/.aws
+          cat <<EOF > ~/.aws/credentials
+          [DevSandbox]
+          aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          EOF
 
       # 3) Instala .NET SDK 6.0
       - name: Setup .NET 6
@@ -45,7 +54,7 @@ jobs:
       # 5) Instala o Serverless Framework CLI
       - name: Install Serverless
         run: npm install -g serverless@3
-      
+        
       # 6) Loop para publicar + zipar + deploy de cada stack
       - name: Publish & Deploy Stacks
         run: |
