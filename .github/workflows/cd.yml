@@ -44,8 +44,8 @@ jobs:
 
       # 5) Instala o Serverless Framework CLI
       - name: Install Serverless
-        run: npm install -g serverless
-
+        run: npm install -g serverless@3
+      
       # 6) Loop para publicar + zipar + deploy de cada stack
       - name: Publish & Deploy Stacks
         run: |
