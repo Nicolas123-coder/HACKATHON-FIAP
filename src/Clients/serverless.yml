@@ -1,0 +1,50 @@
+service: pos-tech-clients-ms
+
+provider:
+  name: aws
+  stage: ${opt:stage, "dev"}
+  region: sa-east-1
+  runtime: dotnet6
+  profile: DevSandbox
+  role: arn:aws:iam::985539770222:role/PosTechRole
+  environment:
+    CLIENTS_TABLE: PosTech-Clients
+    JWT_SECRET: ${ssm:/aws/reference/secretsmanager/JwtSecret}
+    ORDERS_QUEUE_URL: https://sqs.sa-east-1.amazonaws.com/985539770222/PosTech-Orders.fifo
+
+package:
+  individually: true
+
+functions:
+  LoginFunction:
+    handler: Clients::Clients.Function::FunctionHandler
+    package:
+      artifact: ./function.zip
+    events:
+      - http:
+          path: /clients/login
+          method: post
+          
+  SearchProductsFunction:
+    handler: Clients::Clients.Function::FunctionHandler
+    package:
+      artifact: ./function.zip
+    events:
+      - http:
+          path: /clients/search-products
+          method: get
+          cors: true
+          request:
+            parameters:
+              querystrings:
+                type: true
+  
+  CreateOrderFunction:
+    handler: Clients::Clients.Function::FunctionHandler
+    package:
+      artifact: ./function.zip
+    events:
+      - http:
+          path: /clients/create-order
+          method: post
+          cors: true

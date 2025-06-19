@@ -1,5 +1,5 @@
 using System;
-using Employees.Enums;
+using Utils.Components;
 
 namespace Employees.DTOs
 {

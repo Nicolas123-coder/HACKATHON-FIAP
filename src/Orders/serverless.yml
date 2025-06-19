@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/serverless-xyz/serverless-schema/master/dist/serverless.json
+service: pos-tech-orders-ms
+
+provider:
+  name: aws
+  stage: ${opt:stage, "dev"}
+  region: sa-east-1
+  runtime: dotnet6
+  profile: DevSandbox
+  role: arn:aws:iam::985539770222:role/PosTechRole
+  environment:
+    MENU_ITEMS_TABLE: PosTech-MenuItems
+    ORDERS_TABLE: PosTech-Orders
+    JWT_SECRET: ${ssm:/aws/reference/secretsmanager/JwtSecret}
+
+package:
+  individually: true
+
+functions:
+  ProcessOrderFunction:
+    handler: Orders::Orders.Function::SQSEventHandler
+    package:
+      artifact: ./function.zip
+    events:
+      - sqs:
+          arn: "arn:aws:sqs:sa-east-1:985539770222:PosTech-Orders.fifo"
+          batchSize: 5

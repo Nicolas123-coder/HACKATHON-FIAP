@@ -6,7 +6,7 @@ using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
 using Amazon.DynamoDBv2.DocumentModel;
 using MenuItems.DTOs;
-using MenuItems.Entities;
+using Utils.Entities;
 using Utils;
 
 namespace MenuItems.Handlers
@@ -36,28 +36,23 @@ namespace MenuItems.Handlers
             {
                 dtos = JsonSerializer.Deserialize<List<CreateMenuItemRequestDTO>>(request.Body)
                        ?? throw new JsonException("Body vazio");
-                if (dtos.Count == 0)
-                    return Response.BadRequest("É necessário enviar pelo menos um item no array.");
             }
             catch (JsonException ex)
             {
                 context.Logger.LogLine($"Erro de desserialização JSON: {ex.Message}");
                 return Response.BadRequest("Formato de JSON inválido.");
             }
+            
+            var errors = CreateMenuItemValidator.Validate(dtos);
+            if (errors.Count > 0)
+            {
+                context.Logger.LogLine($"Validação falhou: {string.Join("; ", errors)}");
+                return Response.BadRequest(string.Join(" ", errors));
+            }
 
             var createdItems = new List<MenuItem>();
             foreach (var dto in dtos)
             {
-                // Validações
-                if (string.IsNullOrEmpty(dto.Name) || string.IsNullOrEmpty(dto.Description))
-                {
-                    return Response.BadRequest("Name e Description são obrigatórios para cada item.");
-                }
-                if (dto.Price <= 0)
-                {
-                    return Response.BadRequest("Price deve ser maior que zero.");
-                }
-
                 // Mapeia para a entidade
                 var item = new MenuItem
                 {
@@ -65,6 +60,7 @@ namespace MenuItems.Handlers
                     Name        = dto.Name,
                     Description = dto.Description,
                     Price       = dto.Price,
+                    Type        = dto.Type, 
                     IsAvailable = dto.IsAvailable,
                     CreatedAt   = DateTime.UtcNow,
                     UpdatedAt   = DateTime.UtcNow

@@ -7,6 +7,8 @@ using Employees.Entities;
 using Utils;
 using Amazon.DynamoDBv2;
 using Employees.DTOs;
+using Employees.Validators;
+using Utils.Components;
 
 namespace Employees.Handlers
 {
@@ -34,25 +36,18 @@ namespace Employees.Handlers
             try
             {
                 payload = JsonSerializer.Deserialize<Employee>(request.Body);
-
-                if (payload == null
-                    || string.IsNullOrEmpty(payload.Name)
-                    || string.IsNullOrEmpty(payload.Email)
-                    || string.IsNullOrEmpty(payload.Password))
-                {
-                    context.Logger.LogLine("Payload inválido: Nome, Email ou PasswordHash ausentes.");
-                    return Response.BadRequest("Name, Email e PasswordHash são obrigatórios.");
-                }
             }
             catch (JsonException ex)
             {
                 context.Logger.LogLine($"Erro de desserialização JSON: {ex.Message}");
                 return Response.BadRequest("Formato de JSON inválido.");
             }
-            catch (Exception ex)
+            
+            var errors = CreateEmployeeValidator.Validate(payload);
+            if (errors.Count > 0)
             {
-                context.Logger.LogLine($"Erro inesperado ao processar payload: {ex.Message}");
-                return Response.InternalError("Ocorreu um erro interno ao processar a requisição.");
+                context.Logger.LogLine($"Validação falhou: {string.Join("; ", errors)}");
+                return Response.BadRequest(string.Join(" ", errors));
             }
 
             payload.Id        = Guid.NewGuid().ToString();

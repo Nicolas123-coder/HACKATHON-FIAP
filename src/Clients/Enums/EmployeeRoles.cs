@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace MenuItems.Enums
+namespace Employees.Enums
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum EmployeeRoles

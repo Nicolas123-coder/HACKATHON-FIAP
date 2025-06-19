@@ -40,13 +40,18 @@ namespace Employees.Handlers
             {
                 dto = JsonSerializer.Deserialize<LoginRequestDTO>(request.Body)
                       ?? throw new JsonException("Body vazio");
-                if (string.IsNullOrEmpty(dto.Email) || string.IsNullOrEmpty(dto.Password))
-                    return Response.BadRequest("Email e Password são obrigatórios.");
             }
             catch (JsonException ex)
             {
                 context.Logger.LogLine($"Erro de desserialização JSON: {ex.Message}");
                 return Response.BadRequest("Formato de JSON inválido.");
+            }
+            
+            var errors = LoginValidator.Validate(dto);
+            if (errors.Count > 0)
+            {
+                context.Logger.LogLine($"Validação falhou: {string.Join("; ", errors)}");
+                return Response.BadRequest(string.Join(" ", errors));
             }
 
             // Busca usuário por email (precisa de GSI ou scan)

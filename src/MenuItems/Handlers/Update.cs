@@ -7,7 +7,7 @@ using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
 using Amazon.DynamoDBv2.DocumentModel;
 using MenuItems.DTOs;
-using MenuItems.Entities;
+using Utils.Entities;
 using Utils;
 
 namespace MenuItems.Handlers
@@ -37,8 +37,6 @@ namespace MenuItems.Handlers
             {
                 dtos = JsonSerializer.Deserialize<List<UpdateMenuItemRequestDTO>>(request.Body)
                        ?? throw new JsonException("Body vazio");
-                if (dtos.Count == 0)
-                    return Response.BadRequest("É necessário enviar pelo menos um item no array.");
             }
             catch (JsonException ex)
             {
@@ -46,17 +44,16 @@ namespace MenuItems.Handlers
                 return Response.BadRequest("Formato de JSON inválido.");
             }
 
+            var errors = UpdateMenuItemValidator.Validate(dtos);
+            if (errors.Count > 0)
+            {
+                context.Logger.LogLine($"Validação falhou: {string.Join("; ", errors)}");
+                return Response.BadRequest(string.Join(" ", errors));
+            }
+            
             var updatedItems = new List<MenuItem>();
             foreach (var dto in dtos)
             {
-                // Validações básicas
-                if (string.IsNullOrEmpty(dto.Id))
-                    return Response.BadRequest("Id é obrigatório em cada item.");
-                if (string.IsNullOrEmpty(dto.Name) || string.IsNullOrEmpty(dto.Description))
-                    return Response.BadRequest("Name e Description são obrigatórios.");
-                if (dto.Price <= 0)
-                    return Response.BadRequest("Price deve ser maior que zero.");
-
                 // Carrega o documento existente
                 Document? existing;
                 try
@@ -75,17 +72,24 @@ namespace MenuItems.Handlers
                 if (existing == null)
                     return Response.NotFound($"Item não encontrado: {dto.Id}");
 
-                // Atualiza os campos e a data
-                existing["Name"]        = dto.Name;
-                existing["Description"] = dto.Description;
-                existing["Price"]       = dto.Price;
-                existing["IsAvailable"] = dto.IsAvailable;
-                existing["UpdatedAt"]   = DateTime.UtcNow;
+                var item = new MenuItem
+                {
+                    Id          = dto.Id,
+                    Name        = dto.Name,
+                    Description = dto.Description,
+                    Price       = dto.Price,
+                    Type        = dto.Type,
+                    IsAvailable = dto.IsAvailable,
+                    CreatedAt   = DateTime.Parse(existing["CreatedAt"].AsString()),
+                    UpdatedAt   = DateTime.UtcNow
+                };
+                
+                var doc = Document.FromJson(JsonSerializer.Serialize(item));
 
                 // Persiste
                 try
                 {
-                    await _dynamoDbHelper.PutDocumentAsync(_tableName, existing);
+                    await _dynamoDbHelper.PutDocumentAsync(_tableName, doc);
                     context.Logger.LogLine($"MenuItem atualizado: {dto.Id}");
                 }
                 catch (Exception ex)
@@ -95,7 +99,7 @@ namespace MenuItems.Handlers
                 }
 
                 // Converte de volta para entidade e adiciona à lista de retorno
-                var updated = JsonSerializer.Deserialize<MenuItem>(existing.ToJson());
+                var updated = JsonSerializer.Deserialize<MenuItem>(doc.ToJson());
                 if (updated != null)
                     updatedItems.Add(updated);
             }
