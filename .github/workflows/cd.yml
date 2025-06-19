@@ -1,6 +1,4 @@
-name: CD
-
-# Só dispara em push na branch main
+name: 🚀 CD
 
 on:
   push:
@@ -15,22 +13,23 @@ on:
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
+    if: >
+      (github.event_name == 'push' && github.ref == 'refs/heads/main')
+      || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+
     steps:
-      # 1) Checkout do código
-      - name: Checkout
+      - name: 📥 Checkout
         uses: actions/checkout@v3
 
-      # 2) Configura credenciais AWS a partir de Secrets
-      - name: Configure AWS Credentials
+      - name: 🔑 Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id:     ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region:            sa-east-1
-          
-      - name: Create AWS profile file
+
+      - name: 🛠️ Create AWS profile file
         run: |
           mkdir -p ~/.aws
           cat <<EOF > ~/.aws/credentials
@@ -39,44 +38,36 @@ jobs:
           aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           EOF
 
-      # 3) Instala .NET SDK 6.0
-      - name: Setup .NET 6
+      - name: ⚙️ Setup .NET 6
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.0.x'
-
-      # 4) Instala Node.js (necessário para o Serverless)
-      - name: Setup Node.js
+      
+      - name: 📦 Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-
-      # 5) Instala o Serverless Framework CLI
-      - name: Install Serverless
+      
+      - name: 📥 Install Serverless
         run: npm install -g serverless@3
-        
-      # 6) Loop para publicar + zipar + deploy de cada stack
-      - name: Publish & Deploy Stacks
+      
+      - name: 🚚 Publish & Deploy Stacks
         run: |
           for svc in Orders Clients Employees MenuItems; do
             echo "▶️  Deploying $svc stack"
             cd src/$svc
-
-            # 6.1) Publish .NET para linux-x64
+          
             dotnet publish $svc.csproj \
               -c Release \
               -r linux-x64 \
               --no-self-contained \
               -o publish
-
-            # 6.2) Empacota em function.zip
+          
             cd publish
             zip -r ../function.zip .
-
-            # 6.3) Deploy via Serverless
+          
             cd ..
             serverless deploy --stage prod
-
-            # Volta para a raiz
+          
             cd ../../
           done
