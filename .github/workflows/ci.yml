@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Faz checkout do código
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2) Cacheia os pacotes NuGet para acelerar restores
+      - name: Cache NuGet packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
+      # 3) Instala o .NET 6
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '6.0.x'
+
+      # 4) Restaura dependências de todos os projetos/solução
+      - name: Restore dependencies
+        run: dotnet restore
+
+      # 5) Faz o build em Release de tudo
+      - name: Build all projects
+        run: dotnet build --configuration Release --no-restore
+

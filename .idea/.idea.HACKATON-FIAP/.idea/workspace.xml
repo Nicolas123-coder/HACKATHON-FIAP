@@ -5,95 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae795a82-ed9d-4687-9bb9-db2326a010b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Utils/Entities/Order.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/Clients.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/DTOs/CreateOrderDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/DTOs/LoginRequestDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/DTOs/LoginResponseDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/Entities/Client.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/Function.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/Handlers/Authorizer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/Handlers/CreateOrder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/Handlers/Login.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/Handlers/SearchProducts.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/Validators/CreateOrderValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/Validators/LoginValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/AWSSDK.Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/AWSSDK.DynamoDBv2.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/AWSSDK.Extensions.NETCore.Setup.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/AWSSDK.SQS.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Amazon.Lambda.APIGatewayEvents.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Amazon.Lambda.Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Amazon.Lambda.Serialization.SystemTextJson.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Clients.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Clients.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Clients.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Clients.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Microsoft.AspNetCore.Identity.UI.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Microsoft.Bcl.AsyncInterfaces.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Microsoft.Bcl.TimeProvider.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Microsoft.IdentityModel.Abstractions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Microsoft.IdentityModel.JsonWebTokens.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Microsoft.IdentityModel.Logging.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Microsoft.IdentityModel.Tokens.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/System.IdentityModel.Tokens.Jwt.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Utils.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/publish/Utils.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clients/serverless.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Employees/Validators/CreateEmployeeValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Employees/Validators/LoginValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuItems/Validators/CreateMenuItemValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuItems/Validators/UpdateMenuItemValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/DTOs/ItemMessageDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/DTOs/OrderMessageDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/Function.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/Handlers/Authenticator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/Handlers/ProcessOrder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/Orders.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/AWSSDK.Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/AWSSDK.DynamoDBv2.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/AWSSDK.Extensions.NETCore.Setup.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/AWSSDK.SQS.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Amazon.Lambda.APIGatewayEvents.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Amazon.Lambda.Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Amazon.Lambda.SQSEvents.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Amazon.Lambda.Serialization.SystemTextJson.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Microsoft.AspNetCore.Identity.UI.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Microsoft.Bcl.AsyncInterfaces.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Microsoft.Bcl.TimeProvider.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Microsoft.IdentityModel.Abstractions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Microsoft.IdentityModel.JsonWebTokens.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Microsoft.IdentityModel.Logging.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Microsoft.IdentityModel.Tokens.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Orders.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Orders.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Orders.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Orders.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/System.IdentityModel.Tokens.Jwt.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Utils.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/publish/Utils.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/serverless.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.$SolutionArchitecture.drawio.bkp" beforeDir="false" afterPath="$PROJECT_DIR$/.$SolutionArchitecture.drawio.bkp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HACKATON-FIAP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HACKATON-FIAP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HACKATON-FIAP.sln" beforeDir="false" afterPath="$PROJECT_DIR$/HACKATON-FIAP.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolutionArchitecture.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/SolutionArchitecture.drawio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/DTOs/CreateEmployeeResponseDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/DTOs/CreateEmployeeResponseDTO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/Entities/Employee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Entities/Employee.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/Handlers/Create.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Handlers/Create.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/Handlers/Login.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Handlers/Login.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/aws-lambda-tools-defaults.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuItems/DTOs/CreateMenuItemRequestDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems/DTOs/CreateMenuItemRequestDTO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuItems/DTOs/UpdateMenuItemRequestDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems/DTOs/UpdateMenuItemRequestDTO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuItems/Entities/MenuItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Entities/MenuItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuItems/Enums/EmployeeRoles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clients/Enums/EmployeeRoles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuItems/Handlers/Create.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems/Handlers/Create.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuItems/Handlers/Update.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems/Handlers/Update.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuItems/function.zip" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems/function.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuItems/publish/MenuItems.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems/publish/MenuItems.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuItems/publish/MenuItems.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems/publish/MenuItems.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuItems/publish/Utils.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems/publish/Utils.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuItems/publish/Utils.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems/publish/Utils.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +102,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748962644587</updated>
-      <workItem from="1748962645758" duration="46409000" />
+      <workItem from="1748962645758" duration="46737000" />
     </task>
     <servers />
   </component>
