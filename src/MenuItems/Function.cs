@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.APIGatewayEvents;
+using Amazon.XRay.Recorder.Core;
+using Amazon.XRay.Recorder.Handlers.AwsSdk;
 using Microsoft.Extensions.DependencyInjection;
 using MenuItems.Handlers;
 using Utils;
@@ -13,6 +15,14 @@ namespace MenuItems
 {
     public class Function
     {
+        static Function()
+        {
+            // 1) Inicializa o X-Ray recorder
+            AWSXRayRecorder.InitializeInstance();
+            // 2) Instrumenta todas as chamadas do AWS SDK para gerar subsegments
+            AWSSDKHandler.RegisterXRayForAllServices();
+        }
+        
         private readonly IServiceProvider _serviceProvider;
 
         public Function()

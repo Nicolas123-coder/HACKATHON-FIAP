@@ -7,6 +7,9 @@ provider:
   runtime: dotnet6
   profile: DevSandbox
   role: arn:aws:iam::985539770222:role/PosTechRole
+  tracing:
+    apiGateway: true
+    lambda: true
   environment:
     EMPLOYEES_TABLE: PosTech-Employees
     JWT_SECRET: ${ssm:/aws/reference/secretsmanager/JwtSecret}

@@ -2,6 +2,8 @@
 using Amazon.Lambda.Core;
 using Amazon.Lambda.APIGatewayEvents;
 using Amazon.SQS;
+using Amazon.XRay.Recorder.Core;
+using Amazon.XRay.Recorder.Handlers.AwsSdk;
 using Clients.Handlers;
 using Microsoft.Extensions.DependencyInjection;
 using Utils;
@@ -12,6 +14,14 @@ namespace Clients
 {
     public class Function
     {
+        static Function()
+        {
+            // 1) Inicializa o X-Ray recorder
+            AWSXRayRecorder.InitializeInstance();
+            // 2) Instrumenta todas as chamadas do AWS SDK para gerar subsegments
+            AWSSDKHandler.RegisterXRayForAllServices();
+        }
+
         private readonly IServiceProvider _serviceProvider;
         
         public Function()

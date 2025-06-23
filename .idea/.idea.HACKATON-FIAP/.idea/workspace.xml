@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae795a82-ed9d-4687-9bb9-db2326a010b0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cd.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HACKATON-FIAP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HACKATON-FIAP/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Utils.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Utils.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clients/Clients.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clients/Clients.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clients/Function.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clients/Function.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clients/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clients/serverless.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Employees.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Employees.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Function.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Function.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/serverless.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuItems/Function.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems/Function.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuItems/MenuItems.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems/MenuItems.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuItems/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItems/serverless.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Orders/Function.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orders/Function.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Orders/Orders.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orders/Orders.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Orders/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orders/serverless.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1748962644587</updated>
       <workItem from="1748962645758" duration="48814000" />
+      <workItem from="1750681144576" duration="2419000" />
     </task>
     <servers />
   </component>
