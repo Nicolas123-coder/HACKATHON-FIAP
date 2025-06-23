@@ -28,3 +28,33 @@ functions:
       - sqs:
           arn: "arn:aws:sqs:sa-east-1:985539770222:PosTech-Orders.fifo"
           batchSize: 5
+
+  ListOrdersFunction:
+    handler: Orders::Orders.Function::FunctionHandler
+    package:
+      artifact: ./function.zip
+    events:
+      - http:
+          path: /orders
+          method: get
+          cors: true
+          
+  AcceptOrderFunction:
+    handler: Orders::Orders.Function::FunctionHandler
+    package:
+      artifact: ./function.zip
+    events:
+      - http:
+          path: /orders/accept
+          method: post
+          cors: true
+
+  RejectOrderFunction:
+    handler: Orders::Orders.Function::FunctionHandler
+    package:
+      artifact: ./function.zip
+    events:
+      - http:
+          path: /orders/reject
+          method: post
+          cors: true

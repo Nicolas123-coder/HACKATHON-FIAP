@@ -1,6 +1,6 @@
 namespace Orders.Handlers;
 
-public class Authenticator
+public class AcceptOrder
 {
     
 }

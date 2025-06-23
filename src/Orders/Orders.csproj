@@ -30,4 +30,8 @@
       <Folder Include="Validators\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Handlers\AcceptOrder.cs" />
+    </ItemGroup>
+
 </Project>
