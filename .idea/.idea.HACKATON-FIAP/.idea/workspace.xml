@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae795a82-ed9d-4687-9bb9-db2326a010b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Orders/Handlers/Accept.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/Handlers/AcceptOrder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/Handlers/Authorizer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/Handlers/List.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Orders/Handlers/Reject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HACKATON-FIAP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HACKATON-FIAP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Orders/DTOs/OrderMessageDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orders/DTOs/OrderMessageDTO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Orders/Function.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orders/Function.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Orders/Handlers/Authenticator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Orders/Orders.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orders/Orders.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Orders/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orders/serverless.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1748962644587</updated>
       <workItem from="1748962645758" duration="48814000" />
-      <workItem from="1750681144576" duration="6601000" />
+      <workItem from="1750681144576" duration="8570000" />
     </task>
     <servers />
   </component>
