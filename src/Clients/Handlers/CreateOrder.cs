@@ -48,7 +48,7 @@ namespace Clients.Handlers
             // 2) Validações
             var errors = CreateOrderValidator.Validate(dto);
             if (errors.Count > 0)
-                return Response.BadRequest(string.Join(" ", errors));
+                return Response.BadRequest(string.Join("teste teste", errors));
 
             // 3) Monta mensagem com um OrderId único
             var orderMessage = new
