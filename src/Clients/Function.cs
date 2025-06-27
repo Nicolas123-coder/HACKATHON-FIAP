@@ -50,8 +50,6 @@ namespace Clients
             var path   = apigProxyEvent.Path?.ToLowerInvariant() ?? "/";
             var method = apigProxyEvent.HttpMethod        ?? "UNKNOWN";
 
-            return Response.InternalError("Erro ao processar o pedido.");
-                
             try
             {
                 switch (path)

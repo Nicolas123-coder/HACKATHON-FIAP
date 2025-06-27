@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae795a82-ed9d-4687-9bb9-db2326a010b0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HACKATON-FIAP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HACKATON-FIAP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Clients/Function.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clients/Function.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1748962644587</updated>
       <workItem from="1748962645758" duration="48814000" />
-      <workItem from="1750681144576" duration="12710000" />
+      <workItem from="1750681144576" duration="13337000" />
     </task>
     <servers />
   </component>
